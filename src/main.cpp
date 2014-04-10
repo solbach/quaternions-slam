@@ -34,7 +34,7 @@
 /** Composition of two 2D States.
  *
  * State 1 goes from A --> B. State 2 goes from B --> C.
- * The composition of c(A,B) gives us the movement A --> C.
+ * The composition of c(A,C) gives us the movement A --> C.
  * Usefull to calculate the absolute Pose of relative Poses, which
  * started at a given point of origin ( mostly [0,0,0] )
  * In this case we use the motion model derived from Pioneer 3-DX
@@ -100,8 +100,8 @@ int main(int argc, const char* argv[])
     xAC = composition(xAB, xBC, J1, J2);
 
     Util::printEigen(xAC);
-    Util::printEigen(J1);
-    Util::printEigen(J2);
+    Util::printEigen(J1, "Jacobian 1");
+    Util::printEigen(J2, "Jacobian 2");
 
     std::cout << "\nAdiós Eigen" << std::endl;
     return 0; 

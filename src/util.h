@@ -10,8 +10,9 @@ public:
     Util();
 
     template<typename T>
-    static void printEigen(T& value)
+    static void printEigen(T& value, std::string descr="")
     {
+        std::cout << descr << std::endl;
         std::cout << value << "\n" << std::endl;
     }
 };
